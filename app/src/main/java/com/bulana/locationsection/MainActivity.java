@@ -32,9 +32,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        FloatingActionButton buttonAddNote = findViewById(R.id.button_add_location);
+        FloatingActionButton buttonAddLocation = findViewById(R.id.button_add_location);
 
-        buttonAddNote.setOnClickListener(new View.OnClickListener() {
+        buttonAddLocation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, "Location to add", Toast.LENGTH_SHORT).show();

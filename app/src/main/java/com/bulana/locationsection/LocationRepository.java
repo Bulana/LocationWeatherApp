@@ -18,15 +18,15 @@ public class LocationRepository {
     }
 
     public void insert(Location location) {
-        new InsertNoteAsyncTask(locationDao).execute(location);
+        new InsertLocationAsyncTask(locationDao).execute(location);
     }
 
     public void update(Location location) {
-        new UpdateNoteAsyncTask(locationDao).execute(location);
+        new UpdateLocationAsyncTask(locationDao).execute(location);
     }
 
     public void delete(Location location) {
-        new DeleteNoteAsyncTask(locationDao).execute(location);
+        new DeleteLocationAsyncTask(locationDao).execute(location);
     }
 
     public void deleteAllLocations() {
@@ -37,10 +37,10 @@ public class LocationRepository {
         return allLocations;
     }
 
-    private static class InsertNoteAsyncTask extends AsyncTask<Location, Void, Void> {
+    private static class InsertLocationAsyncTask extends AsyncTask<Location, Void, Void> {
         private LocationDao locationDao;
 
-        private InsertNoteAsyncTask(LocationDao locationDao) {
+        private InsertLocationAsyncTask(LocationDao locationDao) {
             this.locationDao = locationDao;
         }
 
@@ -51,10 +51,10 @@ public class LocationRepository {
         }
     }
 
-    private static class UpdateNoteAsyncTask extends AsyncTask<Location, Void, Void> {
+    private static class UpdateLocationAsyncTask extends AsyncTask<Location, Void, Void> {
         private LocationDao locationDao;
 
-        private UpdateNoteAsyncTask(LocationDao locationDao) {
+        private UpdateLocationAsyncTask(LocationDao locationDao) {
             this.locationDao = locationDao;
         }
 
@@ -65,10 +65,10 @@ public class LocationRepository {
         }
     }
 
-    private static class DeleteNoteAsyncTask extends AsyncTask<Location, Void, Void> {
+    private static class DeleteLocationAsyncTask extends AsyncTask<Location, Void, Void> {
         private LocationDao locationDao;
 
-        private DeleteNoteAsyncTask(LocationDao locationDao) {
+        private DeleteLocationAsyncTask(LocationDao locationDao) {
             this.locationDao = locationDao;
         }
 
