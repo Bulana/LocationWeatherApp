@@ -43,18 +43,18 @@ public abstract class LocationDatabase extends RoomDatabase {
 
         @Override
         protected Void doInBackground(Void... voids) {
-            locationDao.insert(new Location("CAPE TOWN", "23", "-30",1));
-            locationDao.insert(new Location("PORT ELIZABETH", "56", "-30",2));
-            locationDao.insert(new Location("JOHNNESBURG", "80", "10",3));
-            locationDao.insert(new Location("DURBAN", "20", "-33",4));
-            locationDao.insert(new Location("KIMBERLY", "56", "-35",5));
-            locationDao.insert(new Location("RUSTERNBURG", "25", "10",6));
-            locationDao.insert(new Location("NELSPRUIT", "34", "-16",7));
-            locationDao.insert(new Location("POLOKWANE", "60", "-37",8));
-            locationDao.insert(new Location("BLOOMFONTEIN", "65", "10",9));
-            locationDao.insert(new Location("CAPE TOWN", "23", "-39",10));
-            locationDao.insert(new Location("PORT ELIZABETH", "56", "-31",11));
-            locationDao.insert(new Location("JOHNNESBURG", "25", "19",12));
+            locationDao.insert(new Location("CAPE TOWN", "32  \u2103", "Partly Cloudy",1));
+            locationDao.insert(new Location("PORT ELIZABETH", "56  \u2103", "Rainy",2));
+            locationDao.insert(new Location("JOHNNESBURG", "80  \u2103", "Windy",3));
+            locationDao.insert(new Location("DURBAN", "20  \u2103", "Sand",4));
+            locationDao.insert(new Location("KIMBERLY", "56  \u2103", "Sunny",5));
+            locationDao.insert(new Location("RUSTERNBURG", "25  \u2103", "Partly Coudy",6));
+            locationDao.insert(new Location("NELSPRUIT", "34  \u2103", "Rainy",7));
+            locationDao.insert(new Location("POLOKWANE", "60  \u2103", "Partly Cloudy",8));
+            locationDao.insert(new Location("BLOOMFONTEIN", "65  \u2103", "Partly Cloudy",9));
+            locationDao.insert(new Location("CAPE TOWN", "23  \u2103", "Rainy",10));
+            locationDao.insert(new Location("PORT ELIZABETH", "56  \u2103", "Partly Cloudy",11));
+            locationDao.insert(new Location("JOHNNESBURG", "18  \u2103", "Partly Cloudy",12));
             return null;
         }
     }
