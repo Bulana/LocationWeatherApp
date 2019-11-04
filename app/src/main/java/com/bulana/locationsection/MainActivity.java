@@ -9,6 +9,8 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
+import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.ItemTouchHelper;
@@ -19,18 +21,19 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
-
 public class MainActivity extends AppCompatActivity {
 
     public static final int ADD_LOCATION_REQUEST = 1;
     public static final int EDIT_LOCATION_REQUEST = 2;
-
+    private SearchView mSearchView;
     private LocationViewModel locationViewModel;
+    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mSearchView = findViewById(R.id.search_view);
 
         FloatingActionButton buttonAddLocation = findViewById(R.id.button_add_location);
 
@@ -44,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        RecyclerView recyclerView = findViewById(R.id.recycler_view);
+        recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
 
@@ -83,6 +86,29 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra(CaptureUpdateActivity.EXTRA_LATITUDE, location.getLatitude());
                 intent.putExtra(CaptureUpdateActivity.EXTRA_POSITION, location.getPosition());
                 startActivityForResult(intent, EDIT_LOCATION_REQUEST);
+            }
+        });
+
+        initSearchView();
+    }
+
+    private void searchRecipesApi(String query){
+        recyclerView.smoothScrollToPosition(0);
+        mSearchView.clearFocus();
+    }
+
+    private void initSearchView(){
+        mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+
+                searchRecipesApi(s);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                return false;
             }
         });
     }

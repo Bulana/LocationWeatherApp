@@ -36,7 +36,7 @@ public class CaptureUpdateActivity extends AppCompatActivity {
         numberPickerPosition.setMinValue(1);
         numberPickerPosition.setMaxValue(500);
 
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_close);
+        //getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_close);
 
         Intent intent = getIntent();
 

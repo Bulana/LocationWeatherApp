@@ -41,12 +41,11 @@
                 android:text="Cape Town"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-            <VideoView
-                android:layout_width="60dp"
+            <View
+                android:layout_width="55dp"
                 android:layout_height="1dp"
                 android:layout_gravity="end"
-                android:background="#4F00DB"
-                />
+                android:background="#7A7878" />
 
             <RelativeLayout
                 android:padding="8dp"
